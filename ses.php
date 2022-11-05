@@ -10,15 +10,15 @@ get_header("sesion");
 ?>
     
 
-  <div class="p-6 sm:p-8 w-full mx-auto">
-      <form action="" method="post" class="bg-gray-50 dark:bg-gray-900 px-6 py-8 w-1/3">
-        <label for="uName">Nombre de usuario</label><br>
-        <input type="text" name="uName" id=""><br>
+  <div class="w-80 border-4 border-black rounded-xl mx-auto p-5">
+      <form action="" method="post" class="">
+        
+        <input type="text" name="uName" id="uName" placeholder="User Name" class="text-black border-b-2 border-black"><br>
         <br>
-        <label for="psswd">Contraseña</label><br>
-        <input type="password" name="" id=""><br>
+        
+        <input type="password" name="pswd" id="pswd" placeholder="Password" class="text-black border-b-2 border-black"><br>
         <br>
-        <input type="submit" value="GO"  class="w-1/3 text-white bg-primary-600 hover:bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+        <input type="submit" value="GO!"  class="border-2">
       </form>
   </div>
    

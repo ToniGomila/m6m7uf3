@@ -1,5 +1,5 @@
 <?php
-function get_head($sit){
+function get_head($site){
     require "./templates/head.php";
 }
 
