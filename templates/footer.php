@@ -1,5 +1,5 @@
     
-    <footer class="footer w-full">
+    <footer class="footer">
             <span class="fSpan">© 2022 <a href="#" class="underlined">ToniGomila</a>. All Rights Reserved.
             </span>
             <ul class="fLinks">

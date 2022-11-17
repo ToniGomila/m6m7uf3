@@ -1,3 +1,3 @@
 <header class="bg-header header-default">
-        <h2 class="header-title">Projecte m6 m7</h2>
+        <img src="../img/Dynasty8.webp" alt="Dinasty 8" width="100px" class="logo">
 </header>

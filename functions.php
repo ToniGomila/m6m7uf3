@@ -1,13 +1,13 @@
 <?php
 function get_head($site){
-    require "./templates/head.php";
+    require "../templates/head.php";
 }
 
 function get_header($site){
-    require "./templates/header.php";
+    require "../templates/header.php";
 }
 
 function get_footer(){
-    require "./templates/footer.php";
+    require "../templates/footer.php";
 }
 ?>
