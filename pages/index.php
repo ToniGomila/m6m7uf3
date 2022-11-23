@@ -1,10 +1,9 @@
 <?php
-
+session_start();
 
 require "../functions.php";
 
 get_head("home");
-
 
 get_header("home"); 
 

@@ -34,7 +34,7 @@ get_header("createAccount");
         <input type="password" placeholder="confirm password" name="pswdC" id="inPswdC">
         <span class="alert" id="inPswdAlC"></span>
       </form>
-        <br><br>
+        
       <input type="submit" value="Crear cuenta" class="sumbit" id="send">
     </div>
       

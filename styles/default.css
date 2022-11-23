@@ -5,6 +5,7 @@
 }
 body{
     font-family: Roboto;
+    background-color: rgb(255, 255, 255);
 }
 
 a{
@@ -12,7 +13,18 @@ a{
     color: black;
 }
 .bg-header{
-    background: linear-gradient(135deg, #030303 30%, #bdbeca 100%);
+    background-image: url("../img/santos.jpg");
+    background-repeat: no-repeat;  
+    background-size: cover;
+}
+.bg-header.header-default::before {
+    content: "";
+    width: 100%;
+    height: 100px;
+    background-color: rgba(41, 42, 42, 0.9);
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 .w-full{
     width: 100%;
@@ -23,14 +35,23 @@ a{
     margin-bottom: 2.5rem;
     padding-left: 5rem;
     padding-right: 5rem;
+    display: flex;
+}
+.hDiv{
+    width: 50%;
+    z-index: 1;
 }
 .logo{
     color: white;
 }
+.userImg{
+    float: right;
+
+}
 .footer{
     padding: 1rem;
-    background: linear-gradient(135deg, #ecedf1 30%, #b1b1b1 100%);
-    border-top: gray solid 1px;
+    background-color: #cdcccc;
+    border-top: rgb(232, 232, 232) solid 1px;
     display: flex;
     align-items: center;
     text-align: center;

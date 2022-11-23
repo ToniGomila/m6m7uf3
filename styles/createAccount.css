@@ -19,11 +19,11 @@
   .box-form div {
     height: auto;
   }
-  .box-form .form-left {/*FONDO LOGIN IZQ*/
+  .box-form .form-left {/*FONDO REGISTRO IZQ*/
     color: #FFFFFF;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("https://images.ecestaticos.com/pdPgxI41_-vdnTdIJIK_c9FGiIo=/0x0:1254x836/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F033%2F179%2Fb06%2F033179b068391494d3b657bff23349cf.jpg");
+    background-image: url("../img/login.jpg");
     overflow: hidden;
   }
   .box-form .form-left .overlay {
@@ -34,7 +34,7 @@
     box-sizing: border-box;
   }
   .box-form .form-left .overlay h1 {
-    font-size: 9vmax;
+    font-size: 10em;
     line-height: 2;
     font-weight:900;
     margin-top: 40px;
@@ -49,7 +49,7 @@
     flex-direction: column;
   }
   .box-form .form-right h5 {
-    font-size: 4vmax;
+    font-size: 6em;
     text-align: center;
     
   }
@@ -96,14 +96,14 @@
         width: 100%;
     }
     .box-form .form-left .overlay h1 {
-      font-size: 5.5vmax;
+      font-size: 3rem;
       text-align: center;
     }
     .box-form .form-right {
         width: 100%;
     }
     .box-form .form-right h5 {
-      font-size: 3vmax;
+      font-size: 2rem;
       padding-top: 0.2rem;
     }
     .box-form .form-right .par-topSpace{

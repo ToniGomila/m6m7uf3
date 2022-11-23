@@ -1,6 +1,7 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["email"]) and isset($_POST["uName"]) and isset($_POST["pswd"])){
+            reset_cookie_err();
             $email = trim($_POST["email"]);
             $user = trim($_POST["uName"]);
             $password = trim($_POST["pswd"]);
@@ -8,11 +9,13 @@
             //checks
             if(!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email)){
                 //no es email
-                //header("Location: ../pages/createAccount.php");
+                header("Location: ../pages/createAccount.php");
+                setcookie("error", "Error, incorrect email format");
                 exit();
             }else if (!check_pass($password)) {
                 //pass no correcte
-                //header("Location: ../pages/createAccount.php");
+                header("Location: ../pages/createAccount.php");
+                setcookie("error", "Error, incorrect password format");
                 exit();
             }
             insertUser($email, $user, $password);
@@ -61,6 +64,16 @@ function check_pass($recivedPass)
         return false;
     }
     return true;
+}
+function reset_cookie_err()
+{
+    if (isset($_COOKIE['error'])) {
+        unset($_COOKIE['error']); 
+        setcookie('error', null, -1, '/'); 
+        return true;
+    } else {
+        return false;
+    }
 }
 ?>
 

@@ -1,37 +1,54 @@
 <?php
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["email"]) and isset($_POST["pswd"])){
+    if (isset($_POST["email"]) and isset($_POST["pswd"])) {
+        reset_cookie_err();
         $email = $_POST["email"];
+        $_SESSION['email'] = $email;
         $pass = $_POST["pswd"];
-        echo $email." ".$pass;
-
-        $salt = $email[0];
-        $pepper =  substr($email,strlen($email)-3,3);
-        $pass = $salt.$pass.$pepper;
-        $pswd = password_hash($pwd, PASSWORD_DEFAULT);
-        //checks
-        
-        $user = get_user($email, $pswd);
-        if ($user == "") {
-            echo("<br>No user found");
+        //check email format
+        if(!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email)){
+            echo ("Login error, incorrect email format");
+            header("Location: ../pages/ses.php");
+            setcookie("error", "Login error, incorrect email format");
             exit();
         }
-        echo($user[0] . " " . $user[1] . $user[2]);
-        
-        
-        
+
+        $salt = $email[0];
+        $pepper =  substr($email, strlen($email) - 3, 3);
+        $pass = $salt . $pass . $pepper;
+
+        $user = get_user($email, $pass);
+        if (is_array($user)) {
+            echo ("usuari: " . $user[1] . " <br> id: " . $user[0] . " <br> email: " . $user[2]);
+            $_SESSION['user'] = serialize($user);
+            header("Location: ../");
+            exit();
+        } elseif ($user == "incorrect") {
+            echo ("Login error, incorrect password");
+            header("Location: ../pages/ses.php");
+            $_SESSION['pass_error'] = "El usuario y la contraseña no coinciden.";
+            exit();
+        } elseif($user == ""){
+            echo ("Login error, email not found");
+            header("Location: ../pages/ses.php");
+            $_SESSION['email_error'] ="El correo introducido no esta registrado.";
+            exit();
+        }
+
         //header("Location: ../");
         exit();
-    }else{
+    } else {
         echo "esta en blanc";
         exit();
     }
-}else{
+} else {
     echo "no POST";
     exit();
 }
 
-function get_user($mail, $pwd)
+//si es correcte retorna array(id, user, email) si user no troba conta amb correu retorna "" sino retorna "incorrect"
+function get_user($mail, $pwd) 
 {
     require_once "./createConn.php";
     $conn = getConn();
@@ -39,9 +56,21 @@ function get_user($mail, $pwd)
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch();
-    if ($result == "") {return "";}
-    else if(password_verify($pwd, $result[3])){return array($result[0] ,$result[1], $result[2]);}
-    return "incorrect";
-    
-
+    if (password_verify($pwd, $result[3])) {
+        return array($result[0], $result[1], $result[2]);
+    } elseif (is_array($result)){
+        return "incorrect";
+    }elseif ($result == "") {
+        return "";
+    }
+}
+function reset_cookie_err()
+{
+    if (isset($_COOKIE['error'])) {
+        unset($_COOKIE['error']); 
+        setcookie('error', null, -1, '/'); 
+        return true;
+    } else {
+        return false;
+    }
 }

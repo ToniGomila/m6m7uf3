@@ -1,11 +1,23 @@
 <?php
-
+session_start();
 
 require "../functions.php";
 
 get_head("ses");
 
-get_header("ses"); 
+get_header("ses");
+if(isset( $_SESSION['email_error'])){
+  $email_error = $_SESSION['email_error'];
+  unset($_SESSION['email_error']);
+}
+else if(isset( $_SESSION['pass_error'])){
+  $pass_error = $_SESSION['pass_error'];
+  unset($_SESSION['pass_error']);
+}
+if (isset($_SESSION['email'])) {
+  $email = $_SESSION['email'];
+  unset($_SESSION['email']);
+}  
 
 ?>
   <div class="box-form">
@@ -22,11 +34,15 @@ get_header("ses");
       <h5>Login</h5>
       <p class="par-topSpace">No tienes cuenta? <a href="./createAccount.php" class="underlined">Crea tu cuenta</a> no cuesta mas de un minuto.</p>
       <div class="inputs">
-        <input type="text" placeholder="email" id="inUname" name="email">
-        <span class="alert" id="inUnameAl"></span>
+        <input type="text" placeholder="email" id="inUname" name="email" value="<?php if(isset($email)){echo $email;}else{echo"";} ?>">
+        <span class="alert" id="inUnameAl">
+          <?php if(isset($email_error)){echo $email_error;} ?>
+        </span>
         <br>
         <input type="password" placeholder="password" id="inPswd" name="pswd">
-        <span class="alert" id="inPswdAl"></span>
+        <span class="alert" id="inPswdAl">
+        <?php if(isset($pass_error)){echo $pass_error;} ?>
+        </span>
       </div>
         
         <br><br>

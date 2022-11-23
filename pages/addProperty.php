@@ -1,11 +1,17 @@
 <?php
-
+session_start();
 
 require "../functions.php";
 
 get_head("addProperty");
 
 get_header("addProperty"); 
+
+if(!isset( $_SESSION['user'])){
+    echo("<span class='error'>Debes iniciar sesion para acceder a esta pagina.</span>");
+    get_footer();
+    exit();
+}
 
 ?>
 <h5>Gracias por confiar en nosotros!</h5>

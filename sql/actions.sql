@@ -5,7 +5,7 @@ CREATE TABLE USER (
     username varchar(20) NOT NULL,
     email varchar(30),
     salt char(1),
-    pswd varchar(255) NOT NULL,
+    pswd varchar(256) NOT NULL,
     pepper char(3),
     PRIMARY KEY (ID)
 );

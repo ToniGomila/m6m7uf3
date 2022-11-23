@@ -1,3 +1,5 @@
+//FALTA CHECK ERROR AMB COOKIE error
+
 //patterns for password checks
 let lowerCaseLetters = /[a-z]/;
 let upperCaseLetters = /[A-Z]/;
