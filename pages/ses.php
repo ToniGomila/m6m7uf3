@@ -18,8 +18,12 @@ if (isset($_SESSION['email'])) {
   $email = $_SESSION['email'];
   unset($_SESSION['email']);
 }  
-
+if (isset($_SESSION['error'])) {
+  $error = $_SESSION['error'];
+  unset($_SESSION['error']);
+}
 ?>
+  
   <div class="box-form">
     <div class="form-left">
       <div class="overlay">
@@ -32,7 +36,7 @@ if (isset($_SESSION['email'])) {
     <form class="form-right" onsubmit="checkForm()" method="POST" id="logForm" action="../actions/logIn.php">
       <!-- FALTA ACTION, METHOD, chequear inputs, ruta a crear cuenta, -->
       <h5>Login</h5>
-      <p class="par-topSpace">No tienes cuenta? <a href="./createAccount.php" class="underlined">Crea tu cuenta</a> no cuesta mas de un minuto.</p>
+      <p class="par-topSpace grisPara">No tienes cuenta? <a href="./createAccount.php" class="underlined">Crea tu cuenta</a> no cuesta mas de un minuto.</p>
       <div class="inputs">
         <input type="text" placeholder="email" id="inUname" name="email" value="<?php if(isset($email)){echo $email;}else{echo"";} ?>">
         <span class="alert" id="inUnameAl">
@@ -52,10 +56,13 @@ if (isset($_SESSION['email'])) {
           <input type="checkbox" name="item" checked/>
           <span class="text-checkbox">Remember me</span>
         </label>
-        <p>forget password?</p>
+        <p class="grisPara">forget password?</p>
       </div>
       <br>  
       <input type="submit" value="Login" class="sumbit">
+      <?php if(isset($error)){
+        echo "<div class='bError'><p class='error'>".$error."</p></div>";
+      }?>
     </form>
       
   </div>

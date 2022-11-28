@@ -31,5 +31,31 @@ CREATE TABLE PROPIERTY (
 
     PRIMARY KEY (ID)
 );
-INSERT INTO USER(username, email, salt, pswd, pepper) 
-         VALUES ("admin", "admin@admin.com", "a", "pswd", "com");
+
+CREATE TABLE CATEGORIA (
+    ID int NOT NULL AUTO_INCREMENT,
+    cName varchar(35) NOT NULL,
+    cShortName varchar(30),
+    PRIMARY KEY (ID)
+);
+CREATE TABLE SUBCATEGORIA (
+    ID int NOT NULL AUTO_INCREMENT,
+    sName varchar(35) NOT NULL,
+    sShortName varchar(30),
+    cID int,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (cID)
+        REFERENCES CATEGORIA(ID)
+        ON DELETE CASCADE
+);
+insert into CATEGORIA(cName, cShortName) values ("pisos", "Pisos");
+insert into CATEGORIA(cName, cShortName) values ("casas", "Casas");
+
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("atico", "Ático", 1);
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("entresuelo", "Entresuelo", 1);
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("apartamento", "Apartamento", 1);
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("duplex", "Duplex", 1);
+
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("rural", "Rural", 2);
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("finca rustica", "Finca rústica", 2);
+insert into SUBCATEGORIA(sName, sShortName, cID) values ("casa adosada", "Casa adosada", 2);

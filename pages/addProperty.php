@@ -6,13 +6,18 @@ require "../functions.php";
 get_head("addProperty");
 
 get_header("addProperty"); 
-
+/*
 if(!isset( $_SESSION['user'])){
-    echo("<span class='error'>Debes iniciar sesion para acceder a esta pagina.</span>");
-    get_footer();
+    $_SESSION["error"] = "Debes iniciar sesion para añadir una propiedad.";
+    header("Location: ./ses.php");
     exit();
 }
-
+$user = unserialize($_SESSION['user']);
+if (!is_array($user)) {
+    $_SESSION["error"] = "Debes iniciar sesion para añadir una propiedad.";
+    header("Location: ./ses.php");
+    exit();
+}*/
 ?>
 <h5>Gracias por confiar en nosotros!</h5>
 <div class="formContainer">

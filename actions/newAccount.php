@@ -1,7 +1,6 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["email"]) and isset($_POST["uName"]) and isset($_POST["pswd"])){
-            reset_cookie_err();
             $email = trim($_POST["email"]);
             $user = trim($_POST["uName"]);
             $password = trim($_POST["pswd"]);
@@ -64,16 +63,6 @@ function check_pass($recivedPass)
         return false;
     }
     return true;
-}
-function reset_cookie_err()
-{
-    if (isset($_COOKIE['error'])) {
-        unset($_COOKIE['error']); 
-        setcookie('error', null, -1, '/'); 
-        return true;
-    } else {
-        return false;
-    }
 }
 ?>
 

@@ -21,5 +21,6 @@ if (!is_array($user)) {
 ?>
 <div class="page">
     <p>Pendiente, debe incluir datos de usuario y listado de propiedades añadidas</p>
+    <button><a href="../actions/close_sesion.php">Cerrar sesion.</a></button>
 </div>
 <?php get_footer(); ?>
