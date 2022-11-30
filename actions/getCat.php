@@ -13,8 +13,7 @@
             $object->name = $row[2];
             array_push($return, $object);
         }
+        header('Content-Type: application/json');
         echo json_encode($return);
-    } else {
-        exit();
     }
 ?>

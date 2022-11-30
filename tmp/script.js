@@ -1,6 +1,5 @@
 let formData = new FormData();
 formData.append("cat1", this.value);
-let atento = document.getElementById("cats");
 
 let options = {method: 'GET'}
 
@@ -8,7 +7,6 @@ let options = {method: 'GET'}
 fetch("../actions/getCat.php", options)
     .then((response) => response.json())
     .then((data) => {
-        console.table(data);
         data.forEach(element => {
             let opt = document.createElement('option');
             opt.value= element.id;
@@ -32,6 +30,6 @@ function cargarSegundoSelect(){
         });
     })
 }
-atento.addEventListener("change", function(){
+document.getElementById("cats").addEventListener("change", function(){
     cargarSegundoSelect()})
 

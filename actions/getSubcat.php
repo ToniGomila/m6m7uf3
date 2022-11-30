@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $object->sName = $row[1];
             array_push($return, $object);
         }
+        header('Content-Type: application/json');
         echo json_encode($return);
     }
     

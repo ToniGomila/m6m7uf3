@@ -9,20 +9,108 @@
     flex: 1 1 100%;
     align-items: stretch;
     justify-content: space-between;
-    box-shadow: 0 0 20px 6px #3d3d3d85;
+    border: 2px solid black;
     margin-bottom: 5%;
 }
+.mainForm{
+    width: 100%;
+    padding: 2rem;
+}
+.formCabecera{
+    width: 100%;
+    height: 3rem;
+}
+.formArea{
+    padding-bottom: 2rem;
+}
+.inputDefault {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #B0B3B9;
+}
+.flexContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.thirdWidth{
+    width: 33%;
+    
+}
+.halfWidth{
+    width: 48%;
+    
+}
+.dropsContainer{
+    justify-content: space-between;
+}
+.imgContainer{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
 
+.divCenter{
+    text-align: center;
+    align-items: center;
+}
+.fieldTitle{
+    font-weight: bold;
+    font-size: large;
+    padding: 1rem;
+    padding-left: 0;
+}
+.select{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #B0B3B9;
+    padding: 0.5rem;
+    font-size: large;
+}
+.select:focus{ outline: none;}
+.but{
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 2px solid blue;
+    font-size: large;
+    color: blue;
+    margin: 0;
+}
+.but:hover{
+    background-color: #c7cad0;
+}
+.lBut{
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    
+}
+.rBut{
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+.selectedOption{
+    background-color: #B0B3B9;
+}
+
+.footer{
+    position: relative;
+}
+
+/* DRAG AND DROP STYLES*/
 .drop-area {
-    border: 2px dashed rgb(0, 0, 0);
-    height: 300px;
-    width: 400px;
+    border: 2px dashed rgb(51, 51, 51);
+    height: 10rem;
+    width: 100%;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
+    background-color: rgba(41, 42, 42, 0.207);
 }
 
 .drop-area.active {
@@ -77,3 +165,22 @@
     background-color: transparent;
     color: red;
 }
+
+/* MAP STYLES */
+#map { 
+    height: 100%; 
+    width: 100%;
+    background-color: #163E6F; 
+ }
+ .leaflet-container{
+    outline: 0;
+    overflow: hidden;
+    height: 40vh;
+    width: 100%;
+    margin-left: auto; 
+    margin-right: auto; 
+ }
+ .popup{
+    font-size: large;
+    font-weight: bold;
+ }
