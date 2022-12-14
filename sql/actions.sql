@@ -11,26 +11,7 @@ CREATE TABLE USER (
 );
 
 /*falta comprobar*/
-CREATE TABLE PROPIERTY (
-    ID int NOT NULL,
-    title varchar(255) NOT NULL,
-    desc varchar(255), /*¿texto bastante largo?*/
-    price float,
-    imgHead varchar(255),
-    imgs varchar(255),
-    type varchar(255),
-    /*pensar nom per categoria*/ varchar(255),
-    /*pensar nom subcategoria*/ varchar(255),
-    city varchar(255),
-    street varchar(255),
-    num varchar(255),
-    cp int,
-    lat varchar(255),
-    long varchar(255),
-    userID int,
 
-    PRIMARY KEY (ID)
-);
 
 CREATE TABLE CATEGORIA (
     ID int NOT NULL AUTO_INCREMENT,
@@ -59,3 +40,27 @@ insert into SUBCATEGORIA(sName, sShortName, cID) values ("duplex", "Duplex", 1);
 insert into SUBCATEGORIA(sName, sShortName, cID) values ("rural", "Rural", 2);
 insert into SUBCATEGORIA(sName, sShortName, cID) values ("finca rustica", "Finca rústica", 2);
 insert into SUBCATEGORIA(sName, sShortName, cID) values ("casa adosada", "Casa adosada", 2);
+
+CREATE TABLE PROPIERTY (
+    ID int NOT NULL AUTO_INCREMENT,
+    title varchar(255) NOT NULL,
+    description text, /*¿texto bastante largo?*/
+    action varchar(20),
+    price varchar(255),
+    cat int,
+    subcat int,
+    propPos varchar(250),
+    headImg varchar(255),
+
+    PRIMARY KEY (ID),
+    FOREIGN KEY (cat) REFERENCES CATEGORIA(ID),
+    FOREIGN KEY (subcat) REFERENCES SUBCATEGORIA(ID)  
+);
+CREATE TABLE IMAGES (
+    ID int NOT NULL AUTO_INCREMENT,
+    path varchar(255),
+    propiertyID int,
+
+    PRIMARY KEY (ID),
+    FOREIGN KEY (propiertyID) REFERENCES PROPIERTY(ID)
+);

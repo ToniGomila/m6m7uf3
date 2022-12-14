@@ -1,3 +1,34 @@
+/*-----------------------------------------------
+    BUTTONS FUNCITONS
+  -----------------------------------------------*/
+let inAccion = document.getElementById("accion");
+let butVender = document.getElementById("vender");
+let butAlquilar = document.getElementById("alquilar");
+butVender.addEventListener("click", function(event){
+    event.preventDefault();
+    vender();
+});
+butAlquilar.addEventListener("click", function(event){
+    event.preventDefault();
+    alquilar();
+});
+function vender(){
+    butVender.classList.add("selectedOption");
+    butAlquilar.classList.remove("selectedOption");
+    inAccion.value = "vender";
+}
+function alquilar() {
+    butVender.classList.remove("selectedOption");
+    butAlquilar.classList.add("selectedOption");
+    inAccion.value = "alquilar";
+}
+
+
+    
+
+/* ------------------------------------------------
+    DRAG AND DROP 
+    -----------------------------------------------*/
 
 let filesGallery = [];
 let headFile;
@@ -143,7 +174,20 @@ input.addEventListener("change", function (e) {
     showFiles();
 
 });
-
+headDragDropBut.addEventListener("click", (e) => {
+    e.preventDefault();
+    headInput.click();
+});
+headInput.addEventListener("change", function (e) {
+    //recull fitxers, proces i afegeix a l'array
+    if (Array.from(headInput.files).length ==1) {
+        headFile = processFile(Array.from(headInput.files)[0]);
+    }else{
+        alert("Solo puedes introducir una imagen de cabecera.")
+    }
+    //mostra fitxers
+    showHeadImg();
+});
 
 let sendForm = document.getElementById("send");
 sendForm.addEventListener("click", function(event){
@@ -151,15 +195,82 @@ sendForm.addEventListener("click", function(event){
     enviar();
 });
 function enviar(){
+    //TODO: comprobaciones cosas seteadas
     console.log("click");
     const dataTransfer = new DataTransfer();
+    const dataTransferhead = new DataTransfer();
     
     filesGallery.forEach(file=>{
         dataTransfer.items.add(file);
     })
-            
     input.files = dataTransfer.files;
+    
+    console.log(headFile);
+    if (headFile) {
+        dataTransferhead.items.add(headFile);
+        console.log(headFile);
+        headInput.files = dataTransferhead.files;
+    }
+    
     if (true) {
         document.getElementById("mainForm").submit();
     }
 }
+
+/* ------------------------------------------------
+    SELECT MULTIPLE
+    -----------------------------------------------*/
+let first = document.getElementById("cats");
+
+let formData = new FormData();
+formData.append("cat1", this.value);
+
+let options = { method: 'GET' }
+
+
+fetch("../../actions/get_cat.php", options)
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach(element => {
+            let opt = document.createElement('option');
+            opt.value = element.id;
+            opt.innerText = element.s_name;
+            document.getElementById("cats").appendChild(opt);
+        });
+        cargarSegundoSelect(first.value)
+    })
+    .catch((error) => { });
+
+
+
+first.addEventListener("change", function () {
+    cargarSegundoSelect(first.value)
+    if (first.value == 1) {
+        document.getElementById("dLogo").src = "https://cdn-icons-png.flaticon.com/512/916/916771.png";
+    }else{
+        document.getElementById("dLogo").src = "https://cdn-icons-png.flaticon.com/512/263/263115.png";
+    }
+})
+
+function cargarSegundoSelect(val) {
+    document.getElementById("subcat").innerHTML = "";
+    fetch(`../../actions/get_subcat.php?id=${val}`, options)
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                let opt = document.createElement('option');
+                opt.value = element.id;
+                opt.innerText = element.sName;
+                document.getElementById("subcat").appendChild(opt);
+            });
+        })
+}
+
+/*---------------
+    EDITOR TEXTO
+ ----------------*/
+ tinymce.init({
+    selector: 'textarea#menubar',
+    menubar: 'file edit view'
+  });
+  console.log("pasa tiny");

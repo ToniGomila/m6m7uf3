@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: Roboto;
+}
+.propCard{
+    margin-left: 10rem;
+    width: 25rem;
+    height: 20rem;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+.wFull{
+    width: 100%;
+}
+.halfCard{
+    height: 50%;
+    overflow: hidden;
+}
+.upCard{
+    border-bottom: 1px solid black;
+}
+.bottomCard{
+    padding: 1rem;
+}
+.bottomCard h2{
+    margin-bottom: 1rem;
+}

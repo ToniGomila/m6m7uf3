@@ -1,0 +1,192 @@
+.formContainer {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    border: 2px solid black;
+    margin-bottom: 5%;
+}
+.mainForm{
+    width: 100%;
+    padding: 2rem;
+}
+.formCabecera{
+    width: 100%;
+    height: 3rem;
+}
+.formArea{
+    padding-bottom: 2rem;
+}
+.inputDefault {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #B0B3B9;
+}
+.flexContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.thirdWidth{
+    width: 33%;
+    
+}
+.halfWidth{
+    width: 48%;
+    
+}
+.dropsContainer{
+    justify-content: space-between;
+}
+.imgContainer{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.divCenter{
+    text-align: center;
+    align-items: center;
+}
+.fieldTitle{
+    font-weight: bold;
+    font-size: large;
+    padding: 1rem;
+    padding-left: 0;
+}
+.select{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #B0B3B9;
+    padding: 0.5rem;
+    font-size: large;
+}
+.select:focus{ outline: none;}
+.but{
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 2px solid blue;
+    font-size: large;
+    color: blue;
+    margin: 0;
+}
+.but:hover{
+    background-color: #c7cad0;
+}
+.lBut{
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    margin-right: 0;
+    
+}
+.rBut{
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    margin-left: 0;
+}
+.sellButonsContainer{
+    margin: 0;
+    gap: 0;
+}
+.selectedOption{
+    background-color: #B0B3B9;
+}
+
+.footer{
+    position: relative;
+}
+
+/* DRAG AND DROP STYLES*/
+.drop-area {
+    border: 2px dashed rgb(51, 51, 51);
+    height: 10rem;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    background-color: rgba(41, 42, 42, 0.207);
+}
+
+.drop-area.active {
+    background-color: #ddd;
+    color: #000000;
+    border: 2px dashed blue;
+}
+
+.drop-area button {
+    background-color: blue;
+    color: #ffffff;
+    padding: 8px 15px;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid blue;
+}
+
+.drop-area button:hover {
+    background-color: transparent;
+    color: blue;
+}
+
+.previewImage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.previewImage img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.previewImage .removeBtn {
+    background-color: red;
+    border-radius: 100%;
+    font-size: 15px;
+    padding: 1px;
+    color: #fff;
+    border: 2px solid red;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.previewImage .removeBtn:hover {
+    background-color: transparent;
+    color: red;
+}
+
+/* MAP STYLES */
+#map { 
+    height: 100%; 
+    width: 100%;
+    background-color: #163E6F; 
+ }
+ .leaflet-container{
+    outline: 0;
+    overflow: hidden;
+    height: 40vh;
+    width: 100%;
+    margin-left: auto; 
+    margin-right: auto; 
+ }
+ .popup{
+    font-size: large;
+    font-weight: bold;
+ }
