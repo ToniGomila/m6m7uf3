@@ -44,7 +44,7 @@ if (!is_array($user)) {
                     <button id="vender" class="but lBut">VENDER</button>
                     <button id="alquilar" class="but rBut">ALQUILAR</button>
                 </div>
-                <input type="hidden" name="propAccion" id="accion" value="vender">
+                <input type="hidden" name="propAccion" id="accion" value="Venta">
             </div>
             <div class="thirdWidth">
                 <p class="fieldTitle">Precio</p>

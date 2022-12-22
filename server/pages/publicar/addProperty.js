@@ -15,12 +15,12 @@ butAlquilar.addEventListener("click", function(event){
 function vender(){
     butVender.classList.add("selectedOption");
     butAlquilar.classList.remove("selectedOption");
-    inAccion.value = "vender";
+    inAccion.value = "Venta";
 }
 function alquilar() {
     butVender.classList.remove("selectedOption");
     butAlquilar.classList.add("selectedOption");
-    inAccion.value = "alquilar";
+    inAccion.value = "Alquiler";
 }
 
 

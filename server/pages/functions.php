@@ -7,7 +7,16 @@ function get_header(){
     require "../templates/header.php";
 }
 
+function get_search()
+{
+    require "../templates/search.php";
+}
+
 function get_footer(){
     require "../templates/footer.php";
 }
 ?>
+
+
+
+

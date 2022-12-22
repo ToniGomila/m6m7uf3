@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $propPos =$_POST["propPos"];
         //guardamos imagenes
         $images = array();
-        $dir_subida = '../uploads/';
+        $dir_subida = '../assets/uploads/';
         for ($i=0; $i<count($_FILES["propFiles"]["name"]); $i++) {
             $name = time().rand(1,9999999).basename($_FILES["propFiles"]["name"][$i]);
             $fichero_subido = $dir_subida .$name;

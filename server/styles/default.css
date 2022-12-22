@@ -1,22 +1,25 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     font-family: Roboto;
     background-color: rgb(255, 255, 255);
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
-.bg-header{
+
+.bg-header {
     background-image: url("../assets/img/santos.jpg");
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
     background-size: cover;
 }
+
 .bg-header.header-default::before {
     content: "";
     width: 100%;
@@ -26,29 +29,105 @@ a{
     top: 0px;
     left: 0px;
 }
-.w-full{
+
+
+.w-full {
     width: 100%;
 }
-.header-default{
+.w-half{
+    width: 50%;
+}
+
+.w-third {
+    width: 33%;
+}
+
+.header-default {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-    margin-bottom: 2.5rem;
     padding-left: 5rem;
     padding-right: 5rem;
     display: flex;
 }
-.hDiv{
+
+.hDiv {
     width: 50%;
     z-index: 1;
 }
-.logo{
+
+.logo {
     color: white;
 }
-.userImg{
+.hRight{
+    display: flex;
+    
+}
+.logoContainer{
+    width: 10%;
     float: right;
+}
+.publiContainer{
+    width: 90%;
+}
+.userImg {
+    float: right;
+}
+.userImg:hover{
+    background-color: gray;
+    border-radius: 50%;
+}
+.publicar{
+    background-color: transparent;
+    border: 2px solid white;
+    font-size: larger;
+    color: white;
+    border-radius: 6px;
+    float: right;
+    height: 60px;
+    width: 10rem;
+}
+.publicar:hover{
+    background-color: gray;
+}
+.publicar a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.underHead {
+    display: flex;
+    height: 7rem;
 
 }
-.footer{
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInput {
+    padding: 10px;
+    font-size: large;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #B0B3B9;
+    height: 2rem;
+}
+
+.lupa {
+    border: 0;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: large;
+    border-bottom: 2px solid #B0B3B9;
+    height: 2rem;
+}
+
+
+.footer {
     padding: 1rem;
     background-color: #cdcccc;
     border-top: rgb(232, 232, 232) solid 1px;
@@ -59,16 +138,19 @@ a{
     bottom: 0;
     left: 0;
     width: 100%;
-    
+
 }
-.fSpan{
+
+.fSpan {
     font-size: small;
     color: gray;
 }
-.underlined:hover{
+
+.underlined:hover {
     text-decoration: underline;
 }
-.fLinks{
+
+.fLinks {
     height: 100%;
     display: flex;
     align-items: center;
@@ -76,6 +158,7 @@ a{
     font-size: small;
     color: gray;
 }
-.fUnique{
+
+.fUnique {
     margin-right: 2rem;
 }

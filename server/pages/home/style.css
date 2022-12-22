@@ -2,28 +2,76 @@ body{
     margin: 0;
     font-family: Roboto;
 }
-.propCard{
-    margin-left: 10rem;
-    width: 25rem;
-    height: 20rem;
-    background: #FFFFFF;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid black;
+.footer{
+    position: relative;
+}
+.cardsContainer{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 .wFull{
     width: 100%;
 }
-.halfCard{
-    height: 50%;
-    overflow: hidden;
+.wHalf{
+    width: 50%;
 }
-.upCard{
-    border-bottom: 1px solid black;
+.flex{
+    display: flex;
 }
-.bottomCard{
+.propCard{
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.lCard{
+    width: 40%;
+}
+.cardImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.rCard{
     padding: 1rem;
+    width: 60%;
+    overflow: hidden;
+    position: relative;
 }
-.bottomCard h2{
-    margin-bottom: 1rem;
+.rCard h2{
+    margin-bottom: 0.5rem;
 }
+.rCard .action{
+    font-size:medium;
+    padding-bottom: 1rem;
+}
+.rCard img{
+    width: 40px;
+    float: right;
+}
+.cardLink{
+    color: blue;
+    font-size: large;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+ .bMessage{
+    float: right;
+    
+ }
