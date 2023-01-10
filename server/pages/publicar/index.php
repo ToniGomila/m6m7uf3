@@ -23,6 +23,8 @@ if (!is_array($user)) {
 <script src="https://cdn.tiny.cloud/1/6amn7zix72mw7sdw8yn8a75q61tqx0wmmcldbis1pmqf02ti/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="formContainer">
     <form id="mainForm" class="mainForm" action="../../actions/create_property.php" method="POST" enctype="multipart/form-data">
+        <!-- SAVE USER ID -->
+        <input type="hidden" value="<?php echo $user[0]; ?>" name="uid">
         <!-- MENSAJE BIENVENIDA -->
         <div class="formCabecera formArea">
             <h2>Tu anuncio:</h2>
