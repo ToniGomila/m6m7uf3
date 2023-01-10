@@ -33,6 +33,6 @@ while($row = $stmt->fetch()){
     array_push($array, $row[0]);
 }
 $object->imgs = $array;
-//header('Content-Type: application/json');
-//echo json_encode($object);
+header('Content-Type: application/json');
+echo json_encode($object);
 ?>

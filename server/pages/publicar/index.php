@@ -6,18 +6,17 @@ require "../functions.php";
 get_head();
 
 get_header(); 
-/* COMPROBAR INICIO SESION
 if(!isset( $_SESSION['user'])){
     $_SESSION["error"] = "Debes iniciar sesion para añadir una propiedad.";
-    header("Location: ./ses.php");
+    header("Location: ../login");
     exit();
 }
 $user = unserialize($_SESSION['user']);
 if (!is_array($user)) {
     $_SESSION["error"] = "Debes iniciar sesion para añadir una propiedad.";
-    header("Location: ./ses.php");
+    header("Location: ../login");
     exit();
-}*/
+}
 ?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
