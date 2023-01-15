@@ -32,8 +32,15 @@ fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
                     <div class="bMessage">
                         <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Mas información</a>
                         <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Modificar</a>
-                        <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Eliminar</a>
+                        <button class="cardLink" onclick="deleteProp(${prop.id})">Eliminar</button>
                     </div>
                 </div>
             </div>`
- }  
+}
+function deleteProp(id) {
+    fetch(`http://localhost/actions/delete_prop.php?id=${id}`, {
+        method: "GET",
+        headers: {"Content-type": "application/json;charset=UTF-8"}
+    })
+    window.location.reload();
+}  
