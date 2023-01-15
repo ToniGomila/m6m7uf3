@@ -26,7 +26,7 @@ if ($object == new stdClass()) {
     header("HTTP/1.0 404 Not Found");
 }
 $array = array();
-$sql = "select path from IMAGES where ID = $rID;";
+$sql = "select path from IMAGES where propiertyID = $rID;";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 while($row = $stmt->fetch()){

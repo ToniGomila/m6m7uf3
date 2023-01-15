@@ -51,10 +51,12 @@ CREATE TABLE PROPIERTY (
     subcat int,
     propPos varchar(250),
     headImg varchar(255),
+    uid int,
 
     PRIMARY KEY (ID),
     FOREIGN KEY (cat) REFERENCES CATEGORIA(ID),
-    FOREIGN KEY (subcat) REFERENCES SUBCATEGORIA(ID)  
+    FOREIGN KEY (subcat) REFERENCES SUBCATEGORIA(ID),
+    FOREIGN KEY (uid) REFERENCES USER(ID)  
 );
 CREATE TABLE IMAGES (
     ID int NOT NULL AUTO_INCREMENT,

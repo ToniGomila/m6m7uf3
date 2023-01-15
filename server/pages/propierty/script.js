@@ -8,6 +8,8 @@ let div = document.getElementById("formatContainer")
 fetch(`http://localhost/actions/get_property.php?id=${param}`)
     .then((response) => response.json())
     .then((data) => {
+        console.log("h");
+        console.log(data);
         div.innerHTML += formatProp(data)
 
         let swiper = new Swiper(".mySwiper", {
@@ -29,9 +31,6 @@ function formatProp(prop) {
     let format = `
     <div class="mySwiper imgContainer">
         <div class="swiper-wrapper">`;
-
-    format += `<div class="swiper-slide"><img src="http://localhost/assets/uploads/${prop.headImg}"></div>`;
-
     for (let index = 0; index < prop.imgs.length; index++) {
         format += `
         <div class="swiper-slide"><img src="http://localhost/assets/uploads/${prop.imgs[index]}" class="swiper-slide"></div>

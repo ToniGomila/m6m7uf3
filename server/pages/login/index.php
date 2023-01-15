@@ -33,7 +33,7 @@ if (isset($_SESSION['error'])) {
         
       </div>
     </div>
-    <form class="form-right" onsubmit="checkForm()" method="POST" id="logForm" action="../../actions/logIn.php">
+    <form class="form-right" method="POST" id="logForm" action="../../actions/logIn.php">
       <!-- FALTA ACTION, METHOD, chequear inputs, ruta a crear cuenta, -->
       <h5>Login</h5>
       <p class="par-topSpace grisPara">No tienes cuenta? <a href="../registro/" class="underlined">Crea tu cuenta</a> no cuesta mas de un minuto.</p>

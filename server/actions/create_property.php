@@ -14,12 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         surt();
     }elseif (!isset($_POST["selectSubcat"]) || empty($_POST["selectSubcat"])) {
         surt();
+    }elseif (!isset($_POST["uid"]) || empty($_POST["uid"])) {
+        surt();
     }else{
         //recojemos variables
         $propTitle = $_POST["propTitle"];$propDesc = $_POST["propDesc"];
         $propAccion = $_POST["propAccion"];$propPrice = $_POST["propPrice"];
         $selectCat = $_POST["selectCat"];$selectSubcat = $_POST["selectSubcat"];
-        $propPos =$_POST["propPos"];
+        $propPos =$_POST["propPos"];$uid=$_POST["uid"];
         //guardamos imagenes
         $images = array();
         $dir_subida = '../assets/uploads/';
@@ -44,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "¡Error head!";
         }
         //consulta sql
-        $sql = "insert into PROPIERTY(title, description, action, price, cat, subcat, propPos, headImg) values (
-            '$propTitle', '$propDesc', '$propAccion', '$propPrice', '$selectCat', '$selectSubcat', '$propPos', '$singlename'
+        $sql = "insert into PROPIERTY(title, description, action, price, cat, subcat, propPos, headImg, uid) values (
+            '$propTitle', '$propDesc', '$propAccion', '$propPrice', '$selectCat', '$selectSubcat', '$propPos', '$singlename', '$uid'
         );";
 
         //conexion db
