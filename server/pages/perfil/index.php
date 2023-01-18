@@ -36,12 +36,8 @@ if (!is_array($user)) {
    
 </div>
 
-<div>
-    <div></div>
-    <div>
-        <div></div>
-        <div></div>
-    </div>
+<div id="alerta" class="hidden">
+ 
 </div>
 <script src="./script.js"></script>
 <?php get_footer(); ?>

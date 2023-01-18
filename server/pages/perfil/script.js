@@ -1,7 +1,7 @@
 let uid = document.getElementById("uid").value;
 let propertys = [];
 let div = document.getElementById("propsList")
-console.log(`../../actions/get_user_propertys.php?uid=${uid}`);
+let container = document.getElementById("alerta")
 fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
         .then((response) => response.json())
         .then((data) => {
@@ -32,7 +32,7 @@ fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
                     <div class="bMessage">
                         <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Mas información</a>
                         <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Modificar</a>
-                        <button class="cardLink" onclick="deleteProp(${prop.id})">Eliminar</button>
+                        <button class="cardLink" onclick="confirmMesage(${prop.id})">Eliminar</button>
                     </div>
                 </div>
             </div>`
@@ -43,4 +43,13 @@ function deleteProp(id) {
         headers: {"Content-type": "application/json;charset=UTF-8"}
     })
     window.location.reload();
+}
+function confirmMesage(id) {
+    window.dialog.show({
+        content: 'Seguro que quieres eliminar la publicación?',
+        okText: 'Si',
+        cancelText: 'No',
+        onOk: () => { deleteProp(id) },
+        onCancel: () => { return; }
+      })
 }  

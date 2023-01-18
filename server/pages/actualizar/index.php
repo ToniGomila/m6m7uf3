@@ -1,22 +1,10 @@
 <?php
 session_start();
-
 require "../functions.php";
 
 get_head();
 
-get_header(); 
-if(!isset( $_SESSION['user'])){
-    $_SESSION["error"] = "Debes iniciar sesion para añadir una propiedad.";
-    header("Location: ../login");
-    exit();
-}
-$user = unserialize($_SESSION['user']);
-if (!is_array($user)) {
-    $_SESSION["error"] = "Debes iniciar sesion para añadir una propiedad.";
-    header("Location: ../login");
-    exit();
-}
+get_header();
 ?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -25,13 +13,14 @@ if (!is_array($user)) {
     <form id="mainForm" class="mainForm" action="../../actions/create_property.php" method="POST" enctype="multipart/form-data">
         <!-- SAVE USER ID -->
         <input type="hidden" value="<?php echo $user[0]; ?>" name="uid">
+        <input type="hidden" name="id" id="id">
         <!-- MENSAJE BIENVENIDA -->
         <div class="formCabecera formArea">
-            <h2>Tu anuncio:</h2>
+            <h2>Modifica tu anuncio!</h2>
         </div>
         <!-- TITULO Y DESCRIPCION -->
         <div class="formArea">
-            <p class="fieldTitle">Título</p>
+            <p class="fieldTitle" >Título</p>
             <input type="text" name="propTitle" id="propTitle" class="inputDefault" placeholder="Un título">
             <p class="fieldTitle">Descripción</p>
             <textarea id="menubar" name="propDesc"></textarea>
@@ -49,7 +38,7 @@ if (!is_array($user)) {
             </div>
             <div class="thirdWidth">
                 <p class="fieldTitle">Precio ($)</p>
-                <input type="text" name="propPrice" class="inputDefault" id="descTMP" placeholder="400$">
+                <input type="number" name="propPrice" class="inputDefault" id="descTMP" placeholder="400$">
             </div>
             <div class="thirdWidth"></div>
         </div>
@@ -68,27 +57,6 @@ if (!is_array($user)) {
             <div class="thirdWidth"></div>
         </div>
         
-        <!--DRAG AND DROP -->
-        <div class="flexContainer formArea dropsContainer">
-            <div class="halfWidth">
-                <p class="fieldTitle">Imagen de cabecera</p class="fieldTitle">
-                <div class="drop-area" id="headArea">
-                    <p id="headMsg">Arrastra aquí una foto</p>
-                    <button id="headDropBut">Subir una foto</button>
-                    <input type="file" name="propHeader" id="head-input-file" hidden/>
-                </div>
-                <div id="headPreview"></div>
-            </div>
-            <div class="halfWidth">
-                <p class="fieldTitle">Fotos de tu anuncio</p>
-                <div class="drop-area" id="dArea">
-                    <p id="dropMsg">Deja aquí tus imagenes</p>
-                    <button id="dropBut">Subir fotos</button>
-                    <input type="file" name="propFiles[]" id="input-file" hidden multiple/>
-                </div>
-                <div id="preview"></div>
-            </div>
-        </div>
         <!-- MAPA -->
         <div class="formArea">
             <p class="fieldTitle">Clicka sobre la ubicación de tu propiedad.</p>
@@ -105,6 +73,7 @@ if (!is_array($user)) {
     <button id="send">Aceptar</button>
 </div>
 
-<script src="./map.js" ></script>
-<script src="./addProperty.js"></script>
-<?php get_footer(); ?>
+<script src="./script.js"></script>
+<?php
+get_footer();
+?>

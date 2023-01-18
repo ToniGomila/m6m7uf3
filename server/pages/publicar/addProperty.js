@@ -273,4 +273,3 @@ function cargarSegundoSelect(val) {
     selector: 'textarea#menubar',
     menubar: 'file edit view'
   });
-  console.log("pasa tiny");

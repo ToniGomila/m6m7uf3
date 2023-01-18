@@ -5,8 +5,6 @@ require "../functions.php";
 get_head();
 
 get_header();
-get_search();
-
 ?>
 
 <div class="cardsContainer" id="propsList">
