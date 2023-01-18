@@ -31,8 +31,8 @@ fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
                     <div class="text">${prop.description} </div>
                     <div class="bMessage">
                         <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Mas información</a>
-                        <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Modificar</a>
-                        <button class="cardLink" onclick="confirmMesage(${prop.id})">Eliminar</button>
+                        <a href="http://localhost/pages/actualizar/index.php?id=${prop.id}" class="cardLink">Modificar</a>
+                        <button class="cardLink" onclick="confirmDelete(${prop.id})">Eliminar</button>
                     </div>
                 </div>
             </div>`
@@ -44,7 +44,7 @@ function deleteProp(id) {
     })
     window.location.reload();
 }
-function confirmMesage(id) {
+function confirmDelete(id) {
     window.dialog.show({
         content: 'Seguro que quieres eliminar la publicación?',
         okText: 'Si',
