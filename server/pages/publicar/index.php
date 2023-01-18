@@ -49,7 +49,7 @@ if (!is_array($user)) {
             </div>
             <div class="thirdWidth">
                 <p class="fieldTitle">Precio ($)</p>
-                <input type="text" name="propPrice" class="inputDefault" id="descTMP" placeholder="400$">
+                <input type="number" name="propPrice" class="inputDefault" id="descTMP" placeholder="400$">
             </div>
             <div class="thirdWidth"></div>
         </div>

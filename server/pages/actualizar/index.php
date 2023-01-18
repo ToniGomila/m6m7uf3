@@ -5,12 +5,26 @@ require "../functions.php";
 get_head();
 
 get_header();
+
+if(!isset( $_SESSION['user'])){
+    $_SESSION["error"] = "Debes iniciar sesion para editar una propiedad.";
+    header("Location: http://localhost/pages/login/");
+    exit();
+}
+$user = unserialize($_SESSION['user']);
+if (!is_array($user)) {
+    $_SESSION["error"] = "Debes iniciar sesion para editar una propiedad.";
+    header("Location: http://localhost/pages/login/");
+    exit();
+}
+
+
 ?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script src="https://cdn.tiny.cloud/1/6amn7zix72mw7sdw8yn8a75q61tqx0wmmcldbis1pmqf02ti/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="formContainer">
-    <form id="mainForm" class="mainForm" action="http://localhost/actions/create_property.php" method="POST" enctype="multipart/form-data">
+    <form id="mainForm" class="mainForm" action="http://localhost/actions/update_property.php" method="POST" enctype="multipart/form-data">
         <!-- SAVE USER ID -->
         <input type="hidden" value="<?php echo $user[0]; ?>" name="uid">
         <input type="hidden" name="id" id="id">

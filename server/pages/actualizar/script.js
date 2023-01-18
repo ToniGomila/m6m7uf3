@@ -191,3 +191,9 @@ function cargarSegundoSelect(val) {
         })
 }
 
+/* FOMR CONTROLS */
+let sendForm = document.getElementById("send");
+sendForm.addEventListener("click", function(event){
+    event.preventDefault();
+    document.getElementById("mainForm").submit();
+});
