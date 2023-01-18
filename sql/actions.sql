@@ -66,3 +66,8 @@ CREATE TABLE IMAGES (
     PRIMARY KEY (ID),
     FOREIGN KEY (propiertyID) REFERENCES PROPIERTY(ID)
 );
+
+UPDATE PROPIERTY
+SET title = 'value1', description = 'value2', action = 'value2', price = 'value2', cat = 'cat', subcat = 'subcat', propPos = 'pos' 
+WHERE condition; 
+
