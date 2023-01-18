@@ -9,13 +9,13 @@ get_header();
 
 if(!isset( $_SESSION['user'])){
     $_SESSION["error"] = "Debes iniciar sesion para ver tu perfil.";
-    header("Location: ../login/");
+    header("Location: http://localhost/pages/login/");
     exit();
 }
 $user = unserialize($_SESSION['user']);
 if (!is_array($user)) {
     $_SESSION["error"] = "Debes iniciar sesion para ver tu perfil.";
-    header("Location: ../login/");
+    header("Location: http://localhost/pages/login/");
     exit();
 }
 ?>
@@ -27,7 +27,7 @@ if (!is_array($user)) {
         <h2>(<?php echo $user[0]; ?>)<?php echo $user[1]; ?> | <?php echo $user[2]; ?></h2>
     </div>
     <div>
-        <button class="cSesion"><a href="../../actions/close_sesion.php">Cerrar sesion.</a></button>
+        <button class="cSesion"><a href="http://localhost/actions/close_sesion.php">Cerrar sesion.</a></button>
     </div><br>
     <h1>Tus propiedades</h1>
 </div>

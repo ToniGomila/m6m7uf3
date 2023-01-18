@@ -10,7 +10,7 @@ get_header();
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script src="https://cdn.tiny.cloud/1/6amn7zix72mw7sdw8yn8a75q61tqx0wmmcldbis1pmqf02ti/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="formContainer">
-    <form id="mainForm" class="mainForm" action="../../actions/create_property.php" method="POST" enctype="multipart/form-data">
+    <form id="mainForm" class="mainForm" action="http://localhost/actions/create_property.php" method="POST" enctype="multipart/form-data">
         <!-- SAVE USER ID -->
         <input type="hidden" value="<?php echo $user[0]; ?>" name="uid">
         <input type="hidden" name="id" id="id">

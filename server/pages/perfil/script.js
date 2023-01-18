@@ -2,7 +2,7 @@ let uid = document.getElementById("uid").value;
 let propertys = [];
 let div = document.getElementById("propsList")
 let container = document.getElementById("alerta")
-fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
+fetch(`http://localhost/actions/get_user_propertys.php?uid=${uid}`)
         .then((response) => response.json())
         .then((data) => {
             data.forEach(element => {
@@ -15,7 +15,7 @@ fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
     if(prop.cat == 1){type = "flat"}
     return `<div class="propCard">
                 <div class="lCard">
-                    <img class="cardImg" src="../../assets/uploads/${prop.img}" alt="">
+                    <img class="cardImg" src="http://localhost/assets/uploads/${prop.img}" alt="">
                 </div>
                 <div class="rCard">
                     <div class="wFull flex">
@@ -25,12 +25,12 @@ fetch(`../../actions/get_user_propertys.php?uid=${uid}`)
                             <p class="action">${prop.action}</p>
                         </div>
                         <div class="wHalf smallImgContainer">
-                            <img src="../../assets/img/${type}.png" alt="">
+                            <img src="http://localhost/assets/img/${type}.png" alt="">
                         </div>
                     </div>
                     <div class="text">${prop.description} </div>
                     <div class="bMessage">
-                        <a href="../propierty/index.php?id=${prop.id}" class="cardLink">Mas información</a>
+                        <a href="http://localhost/pages/propierty/index.php?id=${prop.id}" class="cardLink">Mas información</a>
                         <a href="http://localhost/pages/actualizar/index.php?id=${prop.id}" class="cardLink">Modificar</a>
                         <button class="cardLink" onclick="confirmDelete(${prop.id})">Eliminar</button>
                     </div>

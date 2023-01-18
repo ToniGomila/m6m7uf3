@@ -24,7 +24,7 @@
     color: #FFFFFF;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../../assets/img/login.jpg");
+    background-image: url("http://localhost/assets/img/login.jpg");
     overflow: hidden;
   }
   .box-form .form-left .overlay {

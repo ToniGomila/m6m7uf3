@@ -38,7 +38,7 @@
     color: #FFFFFF;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../../assets/img/regBack.jpg");
+    background-image: url("http://localhost/assets/img/regBack.jpg");
     overflow: hidden;
   }
   .box-form .form-left .overlay {

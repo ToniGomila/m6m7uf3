@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //check email format
         if(!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email)){
             echo ("Login error, incorrect email format");
-            header("Location: ../pages/login");
+            header("Location: http://localhost/pages/login");
             setcookie("error", "Login error, incorrect email format");
             exit();
         }
@@ -22,21 +22,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (is_array($user)) {
             echo ("usuari: " . $user[1] . " <br> id: " . $user[0] . " <br> email: " . $user[2]);
             $_SESSION['user'] = serialize($user);
-            header("Location: ../");
+            header("Location: http://localhost/");
             exit();
         } elseif ($user == "incorrect") {
             echo ("Login error, incorrect password");
-            header("Location: ../pages/login");
+            header("Location: http://localhost/pages/login");
             $_SESSION['pass_error'] = "El usuario y la contraseña no coinciden.";
             exit();
         } elseif($user == ""){
             echo ("Login error, email not found");
-            header("Location: ../pages/login");
+            header("Location: http://localhost/pages/login");
             $_SESSION['email_error'] ="El correo introducido no esta registrado.";
             exit();
         }
 
-        //header("Location: ../");
         exit();
     } else {
         echo "esta en blanc";

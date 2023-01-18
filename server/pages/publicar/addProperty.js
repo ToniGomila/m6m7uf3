@@ -228,7 +228,7 @@ formData.append("cat1", this.value);
 let options = { method: 'GET' }
 
 
-fetch("../../actions/get_cat.php", options)
+fetch("http://localhost/actions/get_cat.php", options)
     .then((response) => response.json())
     .then((data) => {
         data.forEach(element => {
@@ -254,7 +254,7 @@ first.addEventListener("change", function () {
 
 function cargarSegundoSelect(val) {
     document.getElementById("subcat").innerHTML = "";
-    fetch(`../../actions/get_subcat.php?id=${val}`, options)
+    fetch(`http://localhost/actions/get_subcat.php?id=${val}`, options)
         .then((response) => response.json())
         .then((data) => {
             data.forEach(element => {

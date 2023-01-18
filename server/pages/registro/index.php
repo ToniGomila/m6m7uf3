@@ -20,8 +20,8 @@ get_header();
     <div class="form-right">
     
       <h5>Registrate</h5>
-      <p class="par-topSpace">Ya tienes una cuenta? <a href="../login/" class="underlined">Inicia sesión.</a></p>
-      <form class="inputs" id="myForm" action="../../actions/create_account.php" method="POST">
+      <p class="par-topSpace">Ya tienes una cuenta? <a href="http://localhost/pages/login/" class="underlined">Inicia sesión.</a></p>
+      <form class="inputs" id="myForm" action="http://localhost/actions/create_account.php" method="POST">
         <input type="text" placeholder="email" name="email" id="inEmail">
         <span class="alert" id="inEmailAl"></span>
         <br>

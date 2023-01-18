@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             insert($sql);
         }
         
-        header("Location: ../");
+        header("Location: http://localhost/");
         exit();
     }
 }else{

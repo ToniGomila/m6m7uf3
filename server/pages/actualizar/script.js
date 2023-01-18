@@ -162,7 +162,7 @@ first.addEventListener("change", function () {
 })
 
 async function cargarPrimerSelect() {
-    fetch("../../actions/get_cat.php")
+    fetch("http://localhost/actions/get_cat.php")
         .then((response) => response.json())
         .then((data) => {
             data.forEach(element => {
@@ -178,7 +178,7 @@ async function cargarPrimerSelect() {
 let subcat = document.getElementById("subcat")
 function cargarSegundoSelect(val) {
     subcat.innerHTML = "";
-    fetch(`../../actions/get_subcat.php?id=${val}`)
+    fetch(`http://localhost/actions/get_subcat.php?id=${val}`)
         .then((response) => response.json())
         .then((data) => {
             console.log("olaa segoon");

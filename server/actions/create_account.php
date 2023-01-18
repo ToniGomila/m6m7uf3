@@ -8,17 +8,17 @@
             //checks
             if(!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email)){
                 //no es email
-                header("Location: ../pages/createAccount.php");
+                header("Location: http://localhost/pages/createAccount.php");
                 setcookie("error", "Error, incorrect email format");
                 exit();
             }else if (!check_pass($password)) {
                 //pass no correcte
-                header("Location: ../pages/createAccount.php");
+                header("Location: http://localhost/pages/createAccount.php");
                 setcookie("error", "Error, incorrect password format");
                 exit();
             }
             insertUser($email, $user, $password);
-            header("Location: ../");
+            header("Location: http://localhost/");
             exit();
         }else{
             header("HTTP/1.1 400 Bad Request");

@@ -33,10 +33,10 @@ if (isset($_SESSION['error'])) {
         
       </div>
     </div>
-    <form class="form-right" method="POST" id="logForm" action="../../actions/logIn.php">
+    <form class="form-right" method="POST" id="logForm" action="http://localhost/actions/logIn.php">
       <!-- FALTA ACTION, METHOD, chequear inputs, ruta a crear cuenta, -->
       <h5>Login</h5>
-      <p class="par-topSpace grisPara">No tienes cuenta? <a href="../registro/" class="underlined">Crea tu cuenta</a> no cuesta mas de un minuto.</p>
+      <p class="par-topSpace grisPara">No tienes cuenta? <a href="http://localhost/pages/registro/" class="underlined">Crea tu cuenta</a> no cuesta mas de un minuto.</p>
       <div class="inputs">
         <input type="text" placeholder="email" id="inUname" name="email" value="<?php if(isset($email)){echo $email;}else{echo"";} ?>">
         <span class="alert" id="inUnameAl">
