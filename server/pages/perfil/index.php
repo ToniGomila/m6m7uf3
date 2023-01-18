@@ -27,8 +27,9 @@ if (!is_array($user)) {
         <h2>(<?php echo $user[0]; ?>)<?php echo $user[1]; ?> | <?php echo $user[2]; ?></h2>
     </div>
     <div>
-        <button><a href="../../actions/close_sesion.php">Cerrar sesion.</a></button>
-    </div>
+        <button class="cSesion"><a href="../../actions/close_sesion.php">Cerrar sesion.</a></button>
+    </div><br>
+    <h1>Tus propiedades</h1>
 </div>
 <!-- PROPS LIST -->
 <div class="cardsContainer" id="propsList">
